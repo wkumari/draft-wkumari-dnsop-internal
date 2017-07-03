@@ -48,10 +48,9 @@
 
     <abstract>
       <t>It has become clear that many users would like to use the DNS
-      resolution system for names which do not have
-      meaning in the global context but do have meaning in a context
-      internal to their nework. This document reserves the string
-      ".internal" for this purpose. </t>
+      resolution system for names which do not have meaning in the global
+      context but do have meaning in a context internal to their network. This
+      document reserves the string ".internal" for this purpose.</t>
 
       <t>[ Ed note: Text inside square brackets ([]) is additional background
       information, answers to frequently asked questions, general musings,
@@ -59,58 +58,57 @@
       these before publication. ]</t>
 
       <t>[ This document is being collaborated on in Github at:
-      https://github.com/__URL__. The most recent version of the document,
-      open issues, etc should all be available here. The authors (gratefully)
-      accept pull requests ]</t>
+      https://github.com/wkumari/draft-wkumari-dnsop-internal. The most recent
+      version of the document, open issues, etc should all be available here.
+      The authors (gratefully) accept pull requests ]</t>
 
       <t>[ Ed note: This document is intended to drive discussion. It is clear
-      that there has been a desire for an "RFC 1918-sytle" TLD for a long time; in
-      its absence, people have just started using whatever seemed convenient.
-      This document requests that the allocation
-      of .internal for this use. There is no existing process for this - some
-      of the purpose of this document is to explore the process implications.
-      ] </t>
+      that there has been a desire for an "RFC 1918-style" TLD for a long
+      time; in its absence, people have just started using whatever seemed
+      convenient. This document requests that the allocation of .internal for
+      this use. There is no existing process for this - some of the purpose of
+      this document is to explore the process implications. ]</t>
     </abstract>
   </front>
 
   <middle>
     <section title="Introduction">
       <t>Over the years, a number of strings have been used as pseudo-TLDs for
-      namespaces that are separate from the "global DNS" namespace. Common examples of these
-      include .home and .corp. See <xref
-      target="I-D.chapin-additional-reserved-tlds "/>, <xref
+      namespaces that are disjoint (or separate) from the "global DNS"
+      namespace. Common examples of these include .home and .corp. See <xref
+      target="I-D.chapin-additional-reserved-tlds"/>, <xref
       target="I-D.ietf-dnsop-sutld-ps"/> for more background information on
       this issue. The <xref target="I-D.ietf-dnsop-sutld-ps"/> document
       discusses the issues in depth, and should be considered required reading
-      for understanding this document. </t>
+      for understanding this document.</t>
 
       <t>The <xref target="I-D.ietf-dnsop-alt-tld"/> document reserves a
       string to be used as a pseudo-TLD for non-DNS resolution contexts.
       However, it is clear that there is a significant use case for a similar
       string to be used for namespaces which are resolved using the DNS
-      protocol, but which do not have a meaning in the global DNS context. </t>
+      protocol, but which do not have a meaning in the global DNS context.</t>
 
-      <t>There is no way to prevent users
-      from simply picking a string (such as .home) and starting to use it for
-      internal use. Unfortunately, although these
-      strings are supposed to only be used internally, there is ample evidence that they often
-      leak into the global DNS, sometimes causing technical isses for the user of the
-      no-longer internal name.</t>
+      <t>There is no way to prevent users from simply picking a string (such
+      as .home) and starting to use it for internal use. Unfortunately,
+      although these strings are supposed to only be used internally, there is
+      ample evidence that they often leak into the global DNS, sometimes
+      causing technical issues for the user of the no-longer internal
+      name.</t>
 
       <t>This document requests allocation of a string to be used as a
-      pseudo-TLD for namespaces that are not part of the global DNS, but are meant
-      to be resolved with the DNS protocol. A
-      reasonable analogy is that this is to names as <xref target="RFC1918"/> is to IP
-      addresses. Such a reservation should alleviate pollution, such as junk queries at the
-      root, and potential collisions with other users of the namespace. </t>
+      pseudo-TLD for namespaces that are not part of the global DNS, but are
+      meant to be resolved with the DNS protocol. A reasonable analogy is that
+      this is to names as <xref target="RFC1918"/> is to IP addresses. Such a
+      reservation should alleviate pollution, such as junk queries at the
+      root, and potential collisions with other users of the namespace.</t>
 
-      <t>Note that there was a discussion of the .homenet
-      delegation in the HOMENET WG, and the resulting decision was to *not* request that the name
-      be delegated as a TLD for the IETF's use.
-      This document has significant similarities to the .homenet case, but also
-      significant differences. These include (in no particular order) the fact
-      that the use case is significant broader, and that there is no urgency
-      to the request and does not delay or create uncertainty for any protocol
+      <t>Note that there was a discussion of the .homenet delegation in the
+      HOMENET WG, and the resulting decision was to *not* request that the
+      name be delegated as a TLD for the IETF's use. This document has
+      significant similarities to the .homenet case, but also significant
+      differences. These include (in no particular order) the fact that the
+      use case is significant broader, and that there is no urgency to the
+      request and does not delay or create uncertainty for any protocol
       work.</t>
 
       <section title="Requirements notation">
@@ -126,11 +124,12 @@
       DNS name is needed.</t>
 
       <t>This includes creating a namespace "behind" a Customer Premises
-      Equipment (CPE). For example, the Belkin company used ".belkin" for this.
-      British Telecom used ".home", and shipped devices named
+      Equipment (CPE). For example, the Belkin company used ".belkin" for
+      this. British Telecom used ".home", and shipped devices named
       "bthomehub.home" <xref target="BT_HOME_HUB"/>). Additionally, internal
       resolution systems like Microsoft Active Directory have documentation
-      that suggests (or previously suggested) that administrators use ".corp" for these cases. </t>
+      that suggests (or previously suggested) that administrators use ".corp"
+      for these cases.</t>
 
       <t>The .internal TLD is intended to address some of the issues
       documented in the Special-Use Domain Names Problem Statement <xref
@@ -157,29 +156,29 @@
 
       <t>Other use cases for .internal include its use in testing,
       prototyping, and benchmarking. Researchers have often needed to set up a
-      fake root and namespace in order to test something, and have needed an arbitrarily
-      chosen a name for a piece of network equipment which it not connected to
-      the Internet.</t>
+      fake root and namespace in order to test something, and have needed an
+      arbitrarily chosen a name for a piece of network equipment which it not
+      connected to the Internet.</t>
     </section>
 
     <section title="Why not use &lt;existing name&gt;?">
-      <t>The IANA "Special Use Names" registry [TODO: Ref] already contains
-      some names which, it could be argued, already meet this need.
-      Unfortunately, many of these names (such as ".example") are either reserved for a specific
-      use case, or are semantically unsuitable (for example, a
-      CPE manufacturer would likely not find "Open a browser and connect to
-      'router.invalid'" acceptable).</t>
+      <t>The IANA "Special Use Names" registry <xref target="IANA.SUN"/>
+      already contains some names which, it could be argued, already meet this
+      need. Unfortunately, many of these names (such as ".example") are either
+      reserved for a specific use case, or are semantically unsuitable (for
+      example, a CPE manufacturer would likely not find "Open a browser and
+      connect to 'router.invalid'" acceptable).</t>
 
       <t>This section discusses why existing strings in the Special-Use Domain
       Names registry (<xref target="IANA.SUN"/>) are not appropriate.</t>
 
       <section title="Why not use .alt?">
-        <t>The proposed .alt presudo-TLD is specifically only for use as a pseudo-TLD
-        for non-DNS resolution contexts. At one point .alt was being
-        considered both for DNS and non-DNS resolution contexts, but, after
-        much discussion it was decided that the DNSSEC implications (and
+        <t>The proposed .alt presudo-TLD is specifically only for use as a
+        pseudo-TLD for non-DNS resolution contexts. At one point .alt was
+        being considered both for DNS and non-DNS resolution contexts, but,
+        after much discussion it was decided that the DNSSEC implications (and
         desired behavior) meant that .alt should be reserved specifically for
-        non-DNS resolution. </t>
+        non-DNS resolution.</t>
       </section>
 
       <section title="Why not use something.arpa?">
@@ -200,8 +199,8 @@
         <t>.example, .example.[com|net|org] may indeed be appropriate.
         Unfortunately, the hard part of all of this is not the selection and
         adding of a name to the "Special Use Names" registry, but rather
-        deciding if this should be done and, if so, the process to interact with
-        ICANN in order to achieve the delegation. </t>
+        deciding if this should be done and, if so, the process to interact
+        with ICANN in order to achieve the delegation.</t>
       </section>
     </section>
 
@@ -216,7 +215,8 @@
       name which is added to the Locally-Served DNS Zones <xref
       target="IANA.LocallyServed">(</xref> ) registry, or any other case where
       a name is instantiated. It is briefly covered here, but interested
-      readers should review the DNSOP mailing list archive for more details. </t>
+      readers should review the DNSOP mailing list archive for more
+      details.</t>
 
       <t>Take the following figure:<figure>
           <artwork><![CDATA[
@@ -238,34 +238,35 @@
       "http://router.internal" into a web browser. This causes a DNS lookup to
       be sent from the user's stub to the recursive resolver. The recursive
       resolver correctly identifies that this is query is for itself, and so
-      responds with an answer saying "router.internal is 192.168.0.1". </t>
+      responds with an answer saying "router.internal is 192.168.0.1".</t>
 
       <t/>
 
       <section title="Scenario 1 - No DNSSEC, .internal not delegated">
-        <t>In this scenario, the .internal name has not been added to the
-        root zone, and the user's stub resolver *does not* perform DNSSEC
+        <t>In this scenario, the .internal name has not been added to the root
+        zone, and the user's stub resolver *does not* perform DNSSEC
         validation. The stub receives the response, performs no validation,
         and so trust the answer and connects. The user is happy. This is the
         current behavior for non-DNSSEC validating stubs.</t>
       </section>
 
       <section title="Scenario 2 - DNSSEC, .internal not delegated">
-        <t>In this scenario, the .internal name has not been added to the
-        root zone, and the user's stub resolver *does* perform DNSSEC validation.
+        <t>In this scenario, the .internal name has not been added to the root
+        zone, and the user's stub resolver *does* perform DNSSEC validation.
         (Note that it is believed that validating stubs are currently rare.)
         The stub receives the response, and begins DNSSEC validation. As the
         .internal TLD has not been added to the root zone, DNSSEC
         Authenticated Denial of Existence proves that the .internal TLD does
         not exist (currently there is an NSEC record proving that nothing
-        exists between .intel and .international). This resulting outcome is a DNSSEC
-        "bogus" answer, the user is unable to connect, and becomes frustrated.
-        This is the current behavior for DNSSEC validating stubs.</t>
+        exists between .intel and .international). This resulting outcome is a
+        DNSSEC "bogus" answer, the user is unable to connect, and becomes
+        frustrated. This is the current behavior for DNSSEC validating
+        stubs.</t>
       </section>
 
       <section title="Scenario 3 - DNSSEC, .internal delegated">
-        <t>In this scenario, the .internal name has been added to the DNS
-        root zone, with an insecure delegation to AS112 (by "insecure delegation"
+        <t>In this scenario, the .internal name has been added to the DNS root
+        zone, with an insecure delegation to AS112 (by "insecure delegation"
         we mean that that there is no DS record for .internal in the root
         zone; the .internal domain is unsigned). The stub receives the
         response, and performs DNSSEC validation. As .internal has been
@@ -280,22 +281,22 @@
     <section title="IANA Considerations">
       <t>This document requests that the .internal TLD be assigned to the IANA
       (similar to the way that .example is) and a DNSSEC insecure delegation
-      (that is, a delegation with no DS records) be
-      inserted into the root-zone, delegated to blackhole-[12].iana.org.</t>
+      (that is, a delegation with no DS records) be inserted into the
+      root-zone, delegated to blackhole-[12].iana.org.</t>
 
-      <t>[Editor's note: This is not something which the
-      IANA currently has the authority to do. This fact was extensively discussed during the
-      .homenet discussions. This text in the IANA considerations should be considered a
-      placeholder for "what someone needs to do if this gets IETF consensus".
-      If there is consensus that the reservation of .internal
-      makes sense, there will need to be some process
-      design before implementation. Such a process might be similar to "the IESG asks
-      the IAB to request ICANN to consider the reservation / delegation of
-      this string". ICANN does not currently have a process for handling
-      requests like these, and so will also likely need to design a process for
-      this. It is possible that either process might not be designed and this will fail.
-      It is also possible that the IETF makes a request and ICANN does not make the delegation. ]
-      </t>
+      <t>[Editor's note: This is not something which the IANA currently has
+      the authority to do. This fact was extensively discussed during the
+      .homenet discussions. This text in the IANA considerations should be
+      considered a placeholder for "what someone needs to do if this gets IETF
+      consensus". If there is consensus that the reservation of .internal
+      makes sense, there will need to be some process design before
+      implementation. Such a process might be similar to "the IESG asks the
+      IAB to request ICANN to consider the reservation / delegation of this
+      string". ICANN does not currently have a process for handling requests
+      like these, and so will also likely need to design a process for this.
+      It is possible that either process might not be designed and this will
+      fail. It is also possible that the IETF makes a request and ICANN does
+      not make the delegation. ]</t>
 
       <section title="Domain Name Reservation Considerations">
         <t>[ Ed: This section is to satisfy the requirement in Section 5 of
@@ -348,12 +349,16 @@
     </section>
 
     <section anchor="security" title="Security Considerations">
-      <t>This section will certainly be filled in later as the discussion progresses.</t>
+      <t>This section will certainly be filled in later as the discussion
+      progresses.</t>
     </section>
 
     <section title="Acknowledgements">
-      <t>The authors wish to thank David Lawrence, Suzanne Woolf, Wes
-      Hardaker, Steve Crocker, Paul Hoffman, and many others on the DNSOP mailing list.</t>
+      <t>The authors wish to thank Steve Crocker, Wes Hardaker, David
+      Lawrence, Suzanne Woolf, and many others on the DNSOP mailing list.</t>
+
+      <t>The author would like to especially think Paul Hoffman for creating a
+      Pull Request. </t>
     </section>
   </middle>
 
@@ -365,8 +370,6 @@
     </references>
 
     <references title="Informative References">
-      <?rfc include='reference.I-D.draft-ietf-sidr-iana-objects-03.xml'?>
-
       <?rfc include='reference.I-D.draft-chapin-additional-reserved-tlds-02.xml'?>
 
       <?rfc include='reference.I-D.draft-ietf-dnsop-alt-tld-08.xml'?>
@@ -424,7 +427,7 @@
 
       <t><list style="symbols">
           <t>This document was originally started in late 2014 / early 2015,
-          but languished until being revived in June 2017. </t>
+          but languished until being revived in June 2017.</t>
         </list></t>
     </section>
   </back>
