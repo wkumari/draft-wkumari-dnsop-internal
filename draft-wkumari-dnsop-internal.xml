@@ -406,7 +406,7 @@
       </reference>
 
       <reference anchor="IANA.SUN"
-                 target="https://www.iana.org/assignments/locally-served-dns-zones/locally-served-dns-zones.xhtml">
+                 target="https://www.iana.org/assignments/special-use-domain-names/special-use-domain-names.xhtml">
         <front>
           <title abbrev="Special-Use Domain Names">Special-Use Domain
           Names</title>
