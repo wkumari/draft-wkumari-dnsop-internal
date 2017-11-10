@@ -181,7 +181,7 @@
         non-DNS resolution.</t>
       </section>
 
-      <section title="Why not use something.arpa?">
+      <section anchor="arpa" title="Why not use something.arpa?">
         <t>This is indeed an interesting idea. I suspect that it fails the
         semantically desirable / understandable case, but is definitely worth
         further discussion. It may also cause issues when server operators
@@ -351,6 +351,18 @@
     <section anchor="security" title="Security Considerations">
       <t>This section will certainly be filled in later as the discussion
       progresses.</t>
+    </section>
+
+    <section anchor="i18n" title="Internationalisation Considerations">
+      <t>The string "internal" has been choosen because it is
+      meaningful in english (otherwise, a name like
+      <xref target="arpa">ed972c0b30458c56615082c45cb6f91e.arpa</xref>
+      would have worked as well). Its intent will be clear to
+      english-reading people. In theory, it would have been good to
+      reserve a similar name for the 8,126 languages currenty in the
+      language subtag registry. But it is clearly unrealistic, so in,
+      practice, this name will be meaningful only for some part of the
+      Internet users.</t>
     </section>
 
     <section title="Acknowledgements">
