@@ -77,8 +77,8 @@
       namespaces that are disjoint (or separate) from the "global DNS"
       namespace. Common examples of these include .home and .corp. See <xref
       target="I-D.chapin-additional-reserved-tlds"/>, <xref
-      target="I-D.ietf-dnsop-sutld-ps"/> for more background information on
-      this issue. The <xref target="I-D.ietf-dnsop-sutld-ps"/> document
+      target="RFC8244"/> for more background information on
+      this issue. The <xref target="RFC8244"/> document
       discusses the issues in depth, and should be considered required reading
       for understanding this document.</t>
 
@@ -133,7 +133,7 @@
 
       <t>The .internal TLD is intended to address some of the issues
       documented in the Special-Use Domain Names Problem Statement <xref
-      target="I-D.ietf-dnsop-sutld-ps"/> specifically (from the list in
+      target="RFC8244"/> specifically (from the list in
       Section 3):</t>
 
       <t><list style="hanging">
@@ -366,7 +366,7 @@
     <references title="Normative References">
       <?rfc include='reference.RFC.2119'?>
 
-      <?rfc include='reference.I-D.draft-ietf-dnsop-sutld-ps-06.xml'?>
+      <?rfc include='reference.RFC.8244'?>
     </references>
 
     <references title="Informative References">
