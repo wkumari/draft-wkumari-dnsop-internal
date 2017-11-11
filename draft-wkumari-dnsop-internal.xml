@@ -154,11 +154,13 @@
           mechanism for ad-hoc assignment of Special-Use Domain Names.</t>
         </list></t>
 
-      <t>Other use cases for .internal include its use in testing,
-      prototyping, and benchmarking. Researchers have often needed to set up a
-      fake root and namespace in order to test something, and have needed an
-      arbitrarily chosen a name for a piece of network equipment which it not
-      connected to the Internet.</t>
+      <t>Other use cases for .internal could include its use in
+      testing, prototyping, and benchmarking, but there is already a
+      .test which is in the "Special Use Names" registry, and which is
+      perfectly suitable for that (<xref target="RFC6761"/>, section
+      6.2). Researchers have often needed to set up a fake root and
+      namespace in order to test something, specially a piece of
+      network equipment which it not connected to the Internet.</t>
     </section>
 
     <section title="Why not use &lt;existing name&gt;?">
@@ -376,6 +378,8 @@
 
       <?rfc include='reference.RFC.1918'?>
 
+      <?rfc include='reference.RFC.6761'?>
+      
       <?rfc include='reference.RFC.6762'?>
 
       <reference anchor="BT_HOME_HUB"
